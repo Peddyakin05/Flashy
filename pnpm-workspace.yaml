@@ -1,0 +1,15 @@
+# pnpm 11 reads project settings from here (moved out of package.json's "pnpm" field).
+# Approve these native packages to run their install/build scripts; pnpm blocks
+# post-install scripts by default for supply-chain safety.
+#   - sharp:         used by next/image for production image optimization
+#   - esbuild:       used by tsx to run the TypeScript seed script
+#   - unrs-resolver: native resolver used by eslint's import plugin
+onlyBuiltDependencies:
+  - sharp
+  - esbuild
+  - unrs-resolver
+
+allowBuilds:
+  esbuild: true
+  sharp: true
+  unrs-resolver: true
